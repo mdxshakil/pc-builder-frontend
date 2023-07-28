@@ -1,6 +1,5 @@
 import { categoryButtonsData } from '@/constants';
 import Link from 'next/link';
-import React from 'react';
 
 const commonButtonStyle = {
     overflow: 'hidden',
@@ -28,12 +27,12 @@ const CategoryButtons = () => {
                         ...commonButtonStyle,
                         backgroundImage: button.style.background,
                     }}
-                    className={`group ${index === 0 ? 'dark:text-white' : 'dark:hover:text-gray-900'
+                    className={`group ${index === 0 ? 'text-white' : 'hover:text-gray-900'
                         } focus:ring-4 focus:outline-none focus:ring-${button.style.focusRingColor
-                        }-200 dark:focus:ring-${button.style.focusRingColor === 'white' ? 'gray' : button.style.focusRingColor
+                        }-200 focus:ring-${button.style.focusRingColor === 'white' ? 'gray' : button.style.focusRingColor
                         }-800`}
                 >
-                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
                         <Link href={`category/${button.path}`}> {button.label}</Link>
                     </span>
                 </button>

@@ -1,4 +1,3 @@
-import React from 'react';
 import RootLayout from '@/components/layout/RootLayout';
 import { partsCategories } from '@/constants';
 import Link from 'next/link';

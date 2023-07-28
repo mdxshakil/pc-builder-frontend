@@ -23,8 +23,8 @@ const ProductDetailsPage = ({ productDetails }) => {
                             <div>
                                 <span>Ratings:</span>
                                 <div className='flex items-center justifu-start gap-4'>
-                                    <span className=" font-semibold  dark:text-yellow-500">{averageRating} out of 5 (avg)</span> |
-                                    <span className=" font-semibold  dark:text-yellow-500">{individualRating} out of 5 (individual)</span>
+                                    <span className=" font-semibold text-yellow-500">{averageRating} out of 5 (avg)</span> |
+                                    <span className=" font-semibold text-yellow-500">{individualRating} out of 5 (individual)</span>
 
                                 </div>
                             </div>
@@ -32,7 +32,7 @@ const ProductDetailsPage = ({ productDetails }) => {
                             <div>
                                 <span className='badge badge-warning'>Key Features:</span>
                                 <ul>
-                                    {Object.entries(keyFeatures).map(([key, value], index) => (
+                                    {Object.entries(keyFeatures)?.map(([key, value], index) => (
                                         <li key={index}>
                                             <span>{capitalizeFirstLetter(key)}: {value}</span>
                                         </li>

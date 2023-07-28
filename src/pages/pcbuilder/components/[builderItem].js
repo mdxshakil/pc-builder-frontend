@@ -1,6 +1,5 @@
 import RootLayout from '@/components/layout/RootLayout';
 import BuilderItemCard from '@/components/ui/BuilderItemCard';
-import React from 'react';
 
 const BuilderItemsPage = ({ products }) => {
     return (

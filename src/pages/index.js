@@ -4,14 +4,13 @@ import Productcard from "@/components/ui/Productcard"
 
 export default function HomePage({ featuredProducts }) {
   return (
-
     <div className="max-w-7xl mx-auto p-6">
-      <div>
-        <CategoryButtons/>
+      <div className="mb-2">
+        <CategoryButtons />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center">
         {
-          featuredProducts.map(product => <Productcard
+          featuredProducts?.map(product => <Productcard
             key={product?._id}
             product={product}
           />)
@@ -35,6 +34,7 @@ export const getStaticProps = async () => {
   return {
     props: {
       featuredProducts: data?.data
-    }
+    },
+    revalidate: 30
   }
 }
