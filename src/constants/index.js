@@ -1,33 +1,57 @@
+import { GiProcessor } from "react-icons/gi";
+import { BsFillMotherboardFill } from "react-icons/bs";
+import { CgSmartphoneRam } from "react-icons/cg";
+import { ImPowerCord } from "react-icons/im";
+import { MdOutlineStorage } from "react-icons/md";
+import { PiMonitorFill } from "react-icons/pi";
+import { BsFillMouseFill } from "react-icons/bs";
+
 export const partsCategories = [
     {
         partsName: "Processor",
-        path: "processor"
+        path: "processor",
+        icon: <GiProcessor />,
+        label: 'Processor',
     },
     {
         partsName: "Motherboard",
-        path: "motherboard"
+        path: "motherboard",
+        icon: <BsFillMotherboardFill />,
+        label: 'Motherboard',
     },
     {
         partsName: "RAM",
-        path: "ram"
+        path: "ram",
+        icon: <CgSmartphoneRam />,
+        label: 'RAM',
     },
     {
         partsName: "Power Supply Unit",
-        path: "psu"
+        path: "psu",
+        icon: <ImPowerCord />,
+         label: 'Power Supply',
     },
     {
         partsName: "Storage Device",
-        path: "storage"
+        path: "storage",
+        icon: <MdOutlineStorage />,
+         label: 'Storage',
     },
     {
         partsName: "Monitor",
-        path: "monitor"
+        path: "monitor",
+        icon: <PiMonitorFill />,
+        label: 'Monitor',
     },
     {
         partsName: "Others",
-        path: "others"
+        path: "others",
+        icon: <BsFillMouseFill />,
+        label: 'Others',
     },
 ]
+
+
 
 export const categoryButtonsData = [
     {
@@ -36,7 +60,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #9f7aea, #3b82f6)',
             focusRingColor: 'purple',
         },
-        path: "/Processor"
+        path: "Processor",
+
     },
     {
         label: 'Motherboard',
@@ -44,7 +69,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #60a5fa, #3b82f6)',
             focusRingColor: 'cyan',
         },
-        path: "/Motherboard"
+        path: "Motherboard",
+
     },
     {
         label: 'RAM',
@@ -52,7 +78,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #34d399, #3b82f6)',
             focusRingColor: 'green',
         },
-        path: "/RAM"
+        path: "RAM",
+
     },
     {
         label: 'Power Supply',
@@ -60,7 +87,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #a78bfa, #f43f5e)',
             focusRingColor: 'purple',
         },
-        path: "/Power Supply Unit"
+        path: "Power Supply Unit",
+
     },
     {
         label: 'Storage',
@@ -68,7 +96,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #f43f5e, #fb923c)',
             focusRingColor: 'pink',
         },
-        path: "/Storage Device"
+        path: "Storage Device",
+
     },
     {
         label: 'Monitor',
@@ -76,7 +105,8 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #22d3ee, #84cc16)',
             focusRingColor: 'teal',
         },
-        path: "/Monitor"
+        path: "Monitor",
+
     },
     {
         label: 'Others',
@@ -84,6 +114,7 @@ export const categoryButtonsData = [
             background: 'linear-gradient(135deg, #fca5a5, #fbbf24)',
             focusRingColor: 'red',
         },
-        path: "/Others"
+        path: "Others",
+
     },
 ];
