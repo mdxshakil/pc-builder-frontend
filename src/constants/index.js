@@ -29,13 +29,13 @@ export const partsCategories = [
         partsName: "Power Supply Unit",
         path: "psu",
         icon: <ImPowerCord />,
-         label: 'Power Supply',
+         label: 'Power Supply Unit',
     },
     {
         partsName: "Storage Device",
         path: "storage",
         icon: <MdOutlineStorage />,
-         label: 'Storage',
+         label: 'Storage Device',
     },
     {
         partsName: "Monitor",
@@ -82,7 +82,7 @@ export const categoryButtonsData = [
 
     },
     {
-        label: 'Power Supply',
+        label: 'Power Supply Unit',
         style: {
             background: 'linear-gradient(135deg, #a78bfa, #f43f5e)',
             focusRingColor: 'purple',
@@ -91,7 +91,7 @@ export const categoryButtonsData = [
 
     },
     {
-        label: 'Storage',
+        label: 'Storage Device',
         style: {
             background: 'linear-gradient(135deg, #f43f5e, #fb923c)',
             focusRingColor: 'pink',
