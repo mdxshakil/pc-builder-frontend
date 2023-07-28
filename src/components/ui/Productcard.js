@@ -5,11 +5,8 @@ const Productcard = ({ product }) => {
     const { _id, image, productName, category, price, status, averageRating } = product || {};
     return (
 
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
-            <a href="#">
-                <img className="p-5 w-full h-64 object-cover" src={image} alt={productName} />
-            </a>
-
+        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-110 transition-all">
+            <img className="p-5 w-full h-64 object-cover" src={image} alt={productName} />
             <div className="px-5 pb-5">
                 <a href="#">
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">{productName}</h5>
