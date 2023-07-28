@@ -1,11 +1,16 @@
-import { signIn } from "next-auth/react";
+import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/router";
 import { AiFillGithub } from "react-icons/ai";
 
 const LoginPage = () => {
     const router = useRouter();
     const { callbackUrl } = router.query;
+    const { data: session } = useSession();
 
+    if (session?.user?.email) {
+        router.push("/")
+    }
+    
     return (
         <div className="hero min-h-screen max-w-7xl p-6 mx-auto">
             <div className="hero-content flex-col lg:flex-row-reverse">

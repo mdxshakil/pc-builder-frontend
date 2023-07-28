@@ -1,7 +1,24 @@
 import RootLayout from '@/components/layout/RootLayout';
 import BuilderItemCard from '@/components/ui/BuilderItemCard';
+import { useSession } from 'next-auth/react';
+import Link from 'next/link';
 
 const BuilderItemsPage = ({ products }) => {
+    const { data: session, status } = useSession()
+
+    if (status === "loading") {
+        return <div className='min-h-screen flex flex-col items-center justify-center '>
+            <span className="loading loading-infinity loading-lg"></span>
+        </div>
+    }
+
+    if (status === "unauthenticated") {
+        return <div className='min-h-screen flex flex-col items-center justify-center gap-4'>
+            <p className='text-xl'>You must login to access this page!</p>
+            <Link href={"/login"} className='btn btn-primary btn-sm'>Login</Link>
+        </div>
+    }
+
     return (
         <div className='max-w-7xl mx-auto p-6'>
             <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 place-items-center '>
