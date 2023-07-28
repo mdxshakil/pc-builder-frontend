@@ -5,7 +5,7 @@ const Productcard = ({ product }) => {
     const { _id, image, productName, category, price, status, averageRating } = product || {};
     return (
 
-        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-110 transition-all">
+        <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 hover:scale-105 transition-all">
             <img className="p-5 w-full h-64 object-cover" src={image} alt={productName} />
             <div className="px-5 pb-5">
                 <a href="#">
@@ -23,7 +23,7 @@ const Productcard = ({ product }) => {
 
                 <div className="flex items-center justify-between">
                     <span className="text-3xl font-bold text-gray-900 dark:text-white">${price}</span>
-                    <Link href={`product/${_id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</Link>
+                    <Link href={`/product/${_id}`} className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Details</Link>
                 </div>
             </div>
         </div>
