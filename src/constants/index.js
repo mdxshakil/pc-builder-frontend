@@ -1,30 +1,30 @@
 export const partsCategories = [
     {
-        partsName: "CPU / processor",
-        path: "/processor"
+        partsName: "Processor",
+        path: "processor"
     },
     {
         partsName: "Motherboard",
-        path: "/motherboard"
+        path: "motherboard"
     },
     {
         partsName: "RAM",
-        path: "/ram"
+        path: "ram"
     },
     {
         partsName: "Power Supply Unit",
-        path: "/psu"
+        path: "psu"
     },
     {
         partsName: "Storage Device",
-        path: "/storage"
+        path: "storage"
     },
     {
         partsName: "Monitor",
-        path: "/monitor"
+        path: "monitor"
     },
     {
         partsName: "Others",
-        path: "/others"
+        path: "others"
     },
 ]

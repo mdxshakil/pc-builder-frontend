@@ -17,9 +17,8 @@ const Navbar = () => {
                                     partsCategories.map((item, index) => (
                                         <li
                                             key={index}>
-                                            <Link href={item?.path}>{item.partsName}</Link>
+                                            <Link href={`/category/${item?.partsName}`}>{item.partsName}</Link>
                                         </li>
-
                                     ))
                                 }
                             </ul>
@@ -38,7 +37,7 @@ const Navbar = () => {
                                     partsCategories.map((item, index) => (
                                         <li
                                             key={index}>
-                                            <Link href={item?.path}>{item.partsName}</Link>
+                                            <Link href={`/category/${item?.partsName}`}>{item.partsName}</Link>
                                         </li>
 
                                     ))
