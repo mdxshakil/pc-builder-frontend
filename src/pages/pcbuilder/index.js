@@ -5,15 +5,40 @@ import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiFillDelete } from "react-icons/ai";
 import { clearBuilder, removeFromBuilder } from '@/redux/features/pcbuilder/pcbuilderSlice';
+import toast from "react-hot-toast"
+import { useRouter } from 'next/router';
 
 const PCBuilderPage = () => {
     const { pcItems } = useSelector((state) => state.pcBuilder);
     const dispatch = useDispatch();
+    const router = useRouter();
+
+    // Calculate the total price using reduce
+    const totalPrice = pcItems.reduce((total, item) => total + item.price, 0);
+
     const handleremoveFromBuilder = (itemId) => {
         dispatch(removeFromBuilder(itemId));
     }
+
+    const handleCompleteBuild = () => {
+        toast.success("You have successfully built your pc", {
+            duration: 3000,
+            style: {
+                backgroundColor: "#171E2C",
+                color: "#fff"
+            },
+            icon: "💻"
+        });
+        dispatch(clearBuilder());
+        router.push("/");
+    }
     return (
         <div className='max-w-7xl p-6 mx-auto'>
+            <div className='flex item-center justify-end my-3'>
+                <div className='flex gap-3'>
+                    <h2 className='font-bold text-sm md:text-xl text-info'>Total: ${totalPrice.toFixed(2)}</h2>
+                </div>
+            </div>
             <div className='overflow-x-scroll'>
                 <table className='table'>
                     {/* head */}
@@ -94,7 +119,7 @@ const PCBuilderPage = () => {
             <div className='flex item-center justify-end mt-3'>
                 <div className='flex gap-3'>
                     <button disabled={pcItems?.length < 1} onClick={() => dispatch(clearBuilder())} className='btn btn-xs btn-error'>Reset Builder</button>
-                    <button disabled={pcItems?.length !== partsCategories?.length} className='btn btn-xs btn-success'>Complete Build</button>
+                    <button disabled={pcItems?.length !== partsCategories?.length} className='btn btn-xs btn-success' onClick={handleCompleteBuild}>Complete Build</button>
                 </div>
             </div>
         </div>
