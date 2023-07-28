@@ -1,15 +1,15 @@
 import RootLayout from '@/components/layout/RootLayout';
 import ChatBubble from '@/components/ui/ChatBubble';
 import { capitalizeFirstLetter } from '@/utils';
-import React from 'react';
+import Image from 'next/image';
 
 const ProductDetailsPage = ({ productDetails }) => {
-    const { _id, image, productName, category, status, price, description, keyFeatures, individualRating, averageRating, reviews } = productDetails || {};
+    const { image, productName, category, status, price, description, keyFeatures, individualRating, averageRating, reviews } = productDetails || {};
     return (
         <>
             <div className='p-6 max-w-7xl mx-auto'>
                 <div className="card shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-2">
-                    <figure><img src={image} alt="Album" className='w-full h-96 object-cover hover:scale-150 transition-all duration-500' /></figure>
+                    <figure><Image height={384} width={0} sizes='100vw' src={image} alt={productName} className='w-full h-96 object-cover hover:scale-150 transition-all duration-500' /></figure>
                     <div className="card-body">
                         <h2 className="card-title">{productName}</h2>
                         <div className='flex flex-col'>

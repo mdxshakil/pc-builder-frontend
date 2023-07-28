@@ -1,4 +1,5 @@
 import { addToBuilder } from '@/redux/features/pcbuilder/pcbuilderSlice';
+import Image from 'next/image';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { useDispatch } from 'react-redux';
@@ -16,7 +17,7 @@ const BuilderItemCard = ({ product }) => {
     return (
         <div className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700">
             <div className="flex flex-col items-center py-6">
-                <img className="w-24 h-24 mb-3 rounded-full object-cover shadow-lg" src={image} alt={productName} />
+                <Image width={96} height={96} className="w-24 h-24 mb-3 rounded-full object-cover shadow-lg" src={image} alt={productName} />
                 <h5 className="mb-1 text-md font-medium text-gray-400">{productName}</h5>
                 <div className='flex items-center justify-around gap-6'>
                     <span className="text-sm badge badge-info">{category}</span>

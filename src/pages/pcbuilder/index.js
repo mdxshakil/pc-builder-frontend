@@ -7,6 +7,7 @@ import { AiFillDelete } from "react-icons/ai";
 import { clearBuilder, removeFromBuilder } from '@/redux/features/pcbuilder/pcbuilderSlice';
 import toast from "react-hot-toast"
 import { useRouter } from 'next/router';
+import Image from 'next/image';
 
 const PCBuilderPage = () => {
     const { pcItems } = useSelector((state) => state.pcBuilder);
@@ -77,7 +78,10 @@ const PCBuilderPage = () => {
                                                 <div>
                                                     <div className='avatar'>
                                                         <div className='mask mask-squircle w-10 h-10'>
-                                                            <img
+                                                            <Image
+                                                                height={40}
+                                                                width={40}
+                                                                alt="item"
                                                                 src={selectedItem?.image}
                                                             />
 
