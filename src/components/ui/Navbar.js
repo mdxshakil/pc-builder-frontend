@@ -32,7 +32,7 @@ const Navbar = () => {
                     </ul>
                 </div>
                 {/* mobile - category dropdown ends */}
-                <Link href={"/"} className="btn btn-ghost normal-case text-xl">pcBuilder</Link>
+                <Link href={"/"} className="btn btn-ghost normal-case text-xl">pcEmpire</Link>
             </div>
             <div className="navbar-end">
                 {/* large device category dropdown starts*/}
