@@ -17,7 +17,7 @@ const Banner = () => {
                 <p class="mb-8 text-lg font-norma lg:text-xl sm:px-16 xl:px-48 text-gray-400">Here we focus on unleashing progress through cutting-edge PCs, where technology and innovation fuel long-term growth and endless possibilities.</p>
                 <div class="flex mb-8 lg:mb-16 space-y-4 items-center justify-center gap-4">
                     <a href="https://maps.google.com" target="_blank" class="btn btn-sm font-medium text-center rounded-lg border focus:ring-4 text-white border-gray-700 hover:bg-gray-700 focus:ring-gray-800 text-lg">
-                        Physical Shop Location <BiMap />
+                        Physical Shop Location <BiMap className="animate-bounce text-green-500" />
                     </a>
                 </div>
                 <div class="text-center mx-auto md:max-w-screen-md lg:max-w-screen-lg lg:px-36">
