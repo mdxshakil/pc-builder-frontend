@@ -19,13 +19,16 @@ export default function HomePage({ featuredProducts }) {
       <div className="pt-12 pb-6 text-center">
         <CategoryButtons />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center p-6">
-        {
-          featuredProducts?.map(product => <Productcard
-            key={product?._id}
-            product={product}
-          />)
-        }
+      <div>
+        <h1 className="text-center text-2xl sm:text-3xl">Our Featured Products</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center p-6">
+          {
+            featuredProducts?.map(product => <Productcard
+              key={product?._id}
+              product={product}
+            />)
+          }
+        </div>
       </div>
     </div>
 
