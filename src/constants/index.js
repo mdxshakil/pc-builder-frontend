@@ -29,13 +29,13 @@ export const partsCategories = [
         partsName: "Power Supply Unit",
         path: "psu",
         icon: <ImPowerCord />,
-         label: 'Power Supply Unit',
+        label: 'Power Supply Unit',
     },
     {
         partsName: "Storage Device",
         path: "storage",
         icon: <MdOutlineStorage />,
-         label: 'Storage Device',
+        label: 'Storage Device',
     },
     {
         partsName: "Monitor",
@@ -61,6 +61,7 @@ export const categoryButtonsData = [
             focusRingColor: 'purple',
         },
         path: "Processor",
+        icon: <GiProcessor />,
 
     },
     {
@@ -70,6 +71,7 @@ export const categoryButtonsData = [
             focusRingColor: 'cyan',
         },
         path: "Motherboard",
+        icon: <BsFillMotherboardFill />,
 
     },
     {
@@ -79,6 +81,7 @@ export const categoryButtonsData = [
             focusRingColor: 'green',
         },
         path: "RAM",
+        icon: <CgSmartphoneRam />,
 
     },
     {
@@ -88,6 +91,7 @@ export const categoryButtonsData = [
             focusRingColor: 'purple',
         },
         path: "Power Supply Unit",
+        icon: <ImPowerCord />,
 
     },
     {
@@ -95,6 +99,7 @@ export const categoryButtonsData = [
         style: {
             background: 'linear-gradient(135deg, #f43f5e, #fb923c)',
             focusRingColor: 'pink',
+            icon: <MdOutlineStorage />,
         },
         path: "Storage Device",
 
@@ -106,6 +111,7 @@ export const categoryButtonsData = [
             focusRingColor: 'teal',
         },
         path: "Monitor",
+        icon: <PiMonitorFill />,
 
     },
     {
@@ -115,6 +121,7 @@ export const categoryButtonsData = [
             focusRingColor: 'red',
         },
         path: "Others",
+        icon: <BsFillMouseFill />,
 
     },
 ];

@@ -7,6 +7,7 @@ import { clearBuilder, removeFromBuilder } from '@/redux/features/pcbuilder/pcbu
 import toast from "react-hot-toast"
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const PCBuilderPage = () => {
     const { pcItems } = useSelector((state) => state.pcBuilder);
@@ -34,6 +35,10 @@ const PCBuilderPage = () => {
     }
     return (
         <div className='max-w-7xl p-6 mx-auto'>
+            <Head>
+                <title>PC Empire - PC builder</title>
+                <meta name="PC builder Page" description="PC Empire pc builder page" />
+            </Head>
             <div className='flex item-center justify-end my-3'>
                 <div className='flex gap-3'>
                     <h2 className='font-bold text-sm md:text-xl text-info'>Total: ${totalPrice.toFixed(2)}</h2>

@@ -1,6 +1,7 @@
 import { useRouter } from "next/router";
 import RootLayout from "@/components/layout/RootLayout";
 import Productcard from "@/components/ui/Productcard";
+import Head from "next/head";
 
 const CategoryPage = ({ products }) => {
     const router = useRouter();
@@ -8,6 +9,10 @@ const CategoryPage = ({ products }) => {
 
     return (
         <div className="max-w-7xl mx-auto p-6">
+            <Head>
+                <title>PC Empire - {selectedCategory}</title>
+                <meta name="Category Page" description="PC Empire category page" />
+            </Head>
             <p className="font-semibold">
                 <span>Showing results for </span>
                 <span>{">"} </span>

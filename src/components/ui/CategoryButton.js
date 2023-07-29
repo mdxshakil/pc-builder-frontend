@@ -1,5 +1,12 @@
 import { categoryButtonsData } from '@/constants';
 import Link from 'next/link';
+import { GiProcessor } from "react-icons/gi";
+import { BsFillMotherboardFill } from "react-icons/bs";
+import { CgSmartphoneRam } from "react-icons/cg";
+import { ImPowerCord } from "react-icons/im";
+import { MdOutlineStorage } from "react-icons/md";
+import { PiMonitorFill } from "react-icons/pi";
+import { BsFillMouseFill } from "react-icons/bs";
 
 const commonButtonStyle = {
     overflow: 'hidden',
@@ -33,7 +40,7 @@ const CategoryButtons = () => {
                         }-800`}
                 >
                     <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        <Link href={`category/${button.path}`}> {button.label}</Link>
+                        <Link className='flex items-center justify-center gap-2' href={`category/${button.path}`}> {button.label} <span>{button.icon}</span> </Link>
                     </span>
                 </button>
             ))}

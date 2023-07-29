@@ -1,6 +1,7 @@
 import RootLayout from '@/components/layout/RootLayout';
 import ChatBubble from '@/components/ui/ChatBubble';
 import { capitalizeFirstLetter } from '@/utils';
+import Head from 'next/head';
 import Image from 'next/image';
 
 const ProductDetailsPage = ({ productDetails }) => {
@@ -8,6 +9,10 @@ const ProductDetailsPage = ({ productDetails }) => {
     return (
         <>
             <div className='p-6 max-w-7xl mx-auto'>
+            <Head>
+                <title>PC Empire - {productName}</title>
+                <meta name="Components Page" description="PC Empire pc components page" />
+            </Head>
                 <div className="card shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-2">
                     <figure><Image height={384} width={0} sizes='100vw' src={image} alt={productName} className='w-full h-96 object-cover hover:scale-150 transition-all duration-500' /></figure>
                     <div className="card-body">

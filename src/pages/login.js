@@ -1,4 +1,6 @@
 import { signIn, useSession } from "next-auth/react";
+import Head from "next/head";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import { AiFillGithub } from "react-icons/ai";
 
@@ -10,9 +12,13 @@ const LoginPage = () => {
     if (session?.user?.email) {
         router.push("/")
     }
-    
+
     return (
         <div className="hero min-h-screen max-w-7xl p-6 mx-auto">
+            <Head>
+                <title>PC Empire - Login</title>
+                <meta name="Login Page" description="PC Empire user login page" />
+            </Head>
             <div className="hero-content flex-col lg:flex-row-reverse">
                 <div className="text-center lg:text-left">
                     <h1 className="text-5xl font-bold">Join Us!</h1>
@@ -41,6 +47,7 @@ const LoginPage = () => {
                                 callbackUrl: callbackUrl || "/"
                             })} className="btn btn-primary text-4xl"><AiFillGithub /></button>
                         </div>
+                        <Link href={"/"}>Back to homepage</Link>
                     </div>
                 </div>
             </div>
