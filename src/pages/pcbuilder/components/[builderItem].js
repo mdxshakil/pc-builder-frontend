@@ -1,5 +1,6 @@
 import RootLayout from '@/components/layout/RootLayout';
 import BuilderItemCard from '@/components/ui/BuilderItemCard';
+import Spinner from '@/components/ui/Spinner';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
@@ -8,9 +9,7 @@ const BuilderItemsPage = ({ products }) => {
     const { data: session, status } = useSession()
 
     if (status === "loading") {
-        return <div className='min-h-screen flex flex-col items-center justify-center '>
-            <span className="loading loading-infinity loading-lg"></span>
-        </div>
+        return <Spinner />
     }
 
     if (status === "unauthenticated") {

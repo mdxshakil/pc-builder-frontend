@@ -1,17 +1,21 @@
 import RootLayout from "@/components/layout/RootLayout"
-import Banner from "@/components/ui/Banner"
 import CategoryButtons from "@/components/ui/CategoryButton"
 import Productcard from "@/components/ui/Productcard"
+import Spinner from "@/components/ui/Spinner"
+import dynamic from "next/dynamic"
 import Head from "next/head"
 
 export default function HomePage({ featuredProducts }) {
+  const DynamicBanner = dynamic(() => import('@/components/ui/Banner'), {
+    loading: () => <Spinner />
+  })
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
         <title>PC Empire - Home</title>
         <meta name="Home Page" description="PC Empire homepage" />
       </Head>
-      <Banner />
+      <DynamicBanner />
       <div className="pt-12 pb-6 text-center">
         <CategoryButtons />
       </div>
