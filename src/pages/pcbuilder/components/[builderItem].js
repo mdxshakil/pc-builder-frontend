@@ -4,6 +4,7 @@ import Spinner from '@/components/ui/Spinner';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Link from 'next/link';
+import { Fade } from 'react-awesome-reveal';
 
 const BuilderItemsPage = ({ products }) => {
     const { data: session, status } = useSession()
@@ -20,17 +21,19 @@ const BuilderItemsPage = ({ products }) => {
     }
 
     return (
-        <div className='max-w-7xl mx-auto p-6'>
-            <Head>
-                <title>PC Empire - Components</title>
-                <meta name="Pc components Page" description="PC Empire pc components" />
-            </Head>
-            <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 place-items-center '>
-                {
-                    products?.map(product => <BuilderItemCard key={product?._id} product={product} />)
-                }
+        <Fade>
+            <div className='max-w-7xl mx-auto p-6'>
+                <Head>
+                    <title>PC Empire - Components</title>
+                    <meta name="Pc components Page" description="PC Empire pc components" />
+                </Head>
+                <div className='grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 place-items-center '>
+                    {
+                        products?.map(product => <BuilderItemCard key={product?._id} product={product} />)
+                    }
+                </div>
             </div>
-        </div>
+        </Fade>
     );
 };
 
