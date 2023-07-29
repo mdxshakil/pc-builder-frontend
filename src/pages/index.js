@@ -4,6 +4,7 @@ import Productcard from "@/components/ui/Productcard"
 import Spinner from "@/components/ui/Spinner"
 import dynamic from "next/dynamic"
 import Head from "next/head"
+import { Fade } from "react-awesome-reveal"
 
 export default function HomePage({ featuredProducts }) {
   const DynamicBanner = dynamic(() => import('@/components/ui/Banner'), {
@@ -15,21 +16,25 @@ export default function HomePage({ featuredProducts }) {
         <title>PC Empire - Home</title>
         <meta name="Home Page" description="PC Empire homepage" />
       </Head>
-      <DynamicBanner />
-      <div className="pt-12 pb-6 text-center">
-        <CategoryButtons />
-      </div>
-      <div>
-        <h1 className="text-center text-2xl sm:text-3xl">Our Featured Products</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center p-6">
-          {
-            featuredProducts?.map(product => <Productcard
-              key={product?._id}
-              product={product}
-            />)
-          }
+      <Fade>
+        <DynamicBanner />
+      </Fade>
+      <Fade>
+        <div className="pt-12 pb-6 text-center">
+          <CategoryButtons />
         </div>
-      </div>
+        <div>
+          <h1 className="text-center text-2xl sm:text-3xl">Our Featured Products</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 place-items-center p-6">
+            {
+              featuredProducts?.map(product => <Productcard
+                key={product?._id}
+                product={product}
+              />)
+            }
+          </div>
+        </div>
+      </Fade>
     </div>
 
   )
