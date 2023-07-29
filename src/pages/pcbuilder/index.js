@@ -1,5 +1,5 @@
 import RootLayout from '@/components/layout/RootLayout';
-import { partsCategories } from '@/constants';
+import { categoryData } from '@/constants';
 import Link from 'next/link';
 import { useDispatch, useSelector } from 'react-redux';
 import { AiFillDelete } from "react-icons/ai";
@@ -57,7 +57,7 @@ const PCBuilderPage = () => {
                             </tr>
                         </thead>
                         <tbody>
-                            {partsCategories?.map((item, index) => {
+                            {categoryData?.map((item, index) => {
                                 // Find the corresponding item from redux store's pcItems using category
                                 const selectedItem = pcItems.find((pcItem) => pcItem?.category === item?.partsName);
 
@@ -129,7 +129,7 @@ const PCBuilderPage = () => {
                 <div className='flex item-center justify-end mt-3'>
                     <div className='flex gap-3'>
                         <button disabled={pcItems?.length < 1} onClick={() => dispatch(clearBuilder())} className='btn btn-xs btn-error'>Reset Builder</button>
-                        <button disabled={pcItems?.length !== partsCategories?.length} className='btn btn-xs btn-success' onClick={handleCompleteBuild}>Complete Build</button>
+                        <button disabled={pcItems?.length !== categoryData?.length} className='btn btn-xs btn-success' onClick={handleCompleteBuild}>Complete Build</button>
                     </div>
                 </div>
             </div>

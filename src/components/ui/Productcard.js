@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import RatingStars from './RatingStars';
 
 const Productcard = ({ product }) => {
     const { _id, image, productName, category, price, status, averageRating } = product || {};
@@ -17,8 +18,10 @@ const Productcard = ({ product }) => {
                         <div className="badge badge-success">{status}</div> :
                         <div className="badge badge-error">{status}</div>}
                 </div>
-                <div className="mt-2.5 mb-5">
-                    <span className="text-xs font-semibold mr-2 px-2.5 py-0.5 rounded ml-3">{averageRating} out of 5 (stars)</span>
+                <div className="mt-2.5 mb-5 text-yellow-500">
+                    <span className='flex gap-1'>
+                    <RatingStars rating={averageRating} />{`(${averageRating})`}
+                    </span>
                 </div>
 
                 <div className="flex items-center justify-between">

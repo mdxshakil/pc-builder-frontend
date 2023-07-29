@@ -1,5 +1,6 @@
 import RootLayout from '@/components/layout/RootLayout';
 import ChatBubble from '@/components/ui/ChatBubble';
+import RatingStars from '@/components/ui/RatingStars';
 import { capitalizeFirstLetter } from '@/utils';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -9,10 +10,10 @@ const ProductDetailsPage = ({ productDetails }) => {
     return (
         <>
             <div className='p-6 max-w-7xl mx-auto'>
-            <Head>
-                <title>PC Empire - {productName}</title>
-                <meta name="Components Page" description="PC Empire pc components page" />
-            </Head>
+                <Head>
+                    <title>PC Empire - {productName}</title>
+                    <meta name="Components Page" description="PC Empire pc components page" />
+                </Head>
                 <div className="card shadow-2xl grid grid-cols-1 md:grid-cols-2 gap-2">
                     <figure><Image height={384} width={0} sizes='100vw' src={image} alt={productName} className='w-full h-96 object-cover hover:scale-150 transition-all duration-500' /></figure>
                     <div className="card-body">
@@ -20,17 +21,22 @@ const ProductDetailsPage = ({ productDetails }) => {
                         <div className='flex flex-col'>
                             <span>{description}</span>
                             <div className='flex items-center justifu-start gap-4 py-2'>
-                                <span className='badge badge-info'>Category: {category}</span>
+                                <span className='badge badge-info text-xs sm:text-md'>{category}</span>
                                 {status === "In Stock" ?
-                                    <span className='badge badge-success'>{status}</span> :
-                                    <span className='badge badge-error'>{status}</span>}
+                                    <span className='badge badge-success text-xs sm:text-md'>{status}</span> :
+                                    <span className='badge badge-error text-xs sm:text-md'>{status}</span>}
                             </div>
                             <div>
-                                <span>Ratings:</span>
-                                <div className='flex items-center justifu-start gap-4'>
-                                    <span className=" font-semibold text-yellow-500">{averageRating} out of 5 (avg)</span> |
-                                    <span className=" font-semibold text-yellow-500">{individualRating} out of 5 (individual)</span>
-
+                                <span>{`Ratings: (avg | user)`}</span>
+                                <div className='flex items-center justify-start gap-2 sm:gap-4'>
+                                    <span className='flex gap-1 text-yellow-500'>                                      <RatingStars rating={averageRating} />
+                                        {`(${averageRating})`}
+                                    </span>
+                                    |
+                                    <span className='flex gap-1 text-green-500'>
+                                        <RatingStars rating={individualRating} />
+                                        {`(${individualRating})`}
+                                    </span>
                                 </div>
                             </div>
                             {/* Display keyFeatures */}

@@ -1,13 +1,5 @@
-import { categoryButtonsData } from '@/constants';
+import { categoryData } from '@/constants';
 import Link from 'next/link';
-import { GiProcessor } from "react-icons/gi";
-import { BsFillMotherboardFill } from "react-icons/bs";
-import { CgSmartphoneRam } from "react-icons/cg";
-import { ImPowerCord } from "react-icons/im";
-import { MdOutlineStorage } from "react-icons/md";
-import { PiMonitorFill } from "react-icons/pi";
-import { BsFillMouseFill } from "react-icons/bs";
-
 const commonButtonStyle = {
     overflow: 'hidden',
     fontSize: '0.875rem',
@@ -27,8 +19,8 @@ const commonButtonStyle = {
 const CategoryButtons = () => {
     return (
         <div>
-            {categoryButtonsData?.map((button, index) => (
-                <button
+            {categoryData?.map((button, index) => (
+                <div
                     key={index}
                     style={{
                         ...commonButtonStyle,
@@ -39,10 +31,10 @@ const CategoryButtons = () => {
                         }-200 focus:ring-${button.style.focusRingColor === 'white' ? 'gray' : button.style.focusRingColor
                         }-800`}
                 >
-                    <span className="relative px-5 py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
-                        <Link className='flex items-center justify-center gap-2' href={`category/${button.path}`}> {button.label} <span>{button.icon}</span> </Link>
+                    <span className="relative px-3 sm:px-5 py-1.5 sm:py-2.5 transition-all ease-in duration-75 bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                        <Link className='flex items-center justify-center gap-2' href={`category/${button.path}`}> {button.label} <span className='text-sm sm:text-xl md:text-2xl'>{button.icon}</span> </Link>
                     </span>
-                </button>
+                </div>
             ))}
         </div>
     );

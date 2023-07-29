@@ -1,4 +1,4 @@
-import { partsCategories } from "@/constants";
+import { categoryData } from "@/constants";
 import { signOut, useSession } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,7 +20,7 @@ const Navbar = () => {
                             <a>Categories</a>
                             <ul className="p-2">
                                 {
-                                    partsCategories?.map((item, index) => (
+                                    categoryData?.map((item, index) => (
                                         <li
                                             key={index}>
                                             <Link href={`/category/${item?.partsName}`}>{item.partsName}</Link>
@@ -42,7 +42,7 @@ const Navbar = () => {
                             <summary>Categories</summary>
                             <ul className="p-2">
                                 {
-                                    partsCategories?.map((item, index) => (
+                                    categoryData?.map((item, index) => (
                                         <li
                                             key={index}>
                                             <Link href={`/category/${item?.partsName}`}>{item.partsName}</Link>

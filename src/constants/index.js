@@ -6,54 +6,7 @@ import { MdOutlineStorage } from "react-icons/md";
 import { PiMonitorFill } from "react-icons/pi";
 import { BsFillMouseFill } from "react-icons/bs";
 
-export const partsCategories = [
-    {
-        partsName: "Processor",
-        path: "processor",
-        icon: <GiProcessor />,
-        label: 'Processor',
-    },
-    {
-        partsName: "Motherboard",
-        path: "motherboard",
-        icon: <BsFillMotherboardFill />,
-        label: 'Motherboard',
-    },
-    {
-        partsName: "RAM",
-        path: "ram",
-        icon: <CgSmartphoneRam />,
-        label: 'RAM',
-    },
-    {
-        partsName: "Power Supply Unit",
-        path: "psu",
-        icon: <ImPowerCord />,
-        label: 'Power Supply Unit',
-    },
-    {
-        partsName: "Storage Device",
-        path: "storage",
-        icon: <MdOutlineStorage />,
-        label: 'Storage Device',
-    },
-    {
-        partsName: "Monitor",
-        path: "monitor",
-        icon: <PiMonitorFill />,
-        label: 'Monitor',
-    },
-    {
-        partsName: "Others",
-        path: "others",
-        icon: <BsFillMouseFill />,
-        label: 'Others',
-    },
-]
-
-
-
-export const categoryButtonsData = [
+export const categoryData = [
     {
         label: 'Processor',
         style: {
@@ -62,7 +15,8 @@ export const categoryButtonsData = [
         },
         path: "Processor",
         icon: <GiProcessor />,
-
+        iconName: "GiProcessor",
+        partsName: "Processor",
     },
     {
         label: 'Motherboard',
@@ -72,7 +26,8 @@ export const categoryButtonsData = [
         },
         path: "Motherboard",
         icon: <BsFillMotherboardFill />,
-
+        iconName: "BsFillMotherboardFill",
+        partsName: "Motherboard",
     },
     {
         label: 'RAM',
@@ -82,7 +37,8 @@ export const categoryButtonsData = [
         },
         path: "RAM",
         icon: <CgSmartphoneRam />,
-
+        iconName: "CgSmartphoneRam",
+        partsName: "RAM",
     },
     {
         label: 'Power Supply Unit',
@@ -92,7 +48,8 @@ export const categoryButtonsData = [
         },
         path: "Power Supply Unit",
         icon: <ImPowerCord />,
-
+        iconName: "ImPowerCord",
+        partsName: "Power Supply Unit",
     },
     {
         label: 'Storage Device',
@@ -102,7 +59,8 @@ export const categoryButtonsData = [
         },
         path: "Storage Device",
         icon: <MdOutlineStorage />,
-
+        iconName: "MdOutlineStorage",
+        partsName: "Storage Device",
     },
     {
         label: 'Monitor',
@@ -112,7 +70,8 @@ export const categoryButtonsData = [
         },
         path: "Monitor",
         icon: <PiMonitorFill />,
-
+        iconName: "PiMonitorFill",
+        partsName: "Monitor",
     },
     {
         label: 'Others',
@@ -122,6 +81,7 @@ export const categoryButtonsData = [
         },
         path: "Others",
         icon: <BsFillMouseFill />,
-
+        iconName: "BsFillMouseFill",
+        partsName: "Others",
     },
 ];

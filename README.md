@@ -4,7 +4,11 @@ This project is a web application for selling PC components. Users can browse th
 
 [Frontend Live Link](https://a6-pc-builder-frontend.vercel.app/)
 
-[Repository Link](https://github.com/mdxshakil/pc-builder-frontend)
+[Frontend Repository Link](https://github.com/mdxshakil/pc-builder-frontend)
+
+[Backend Live Link](https://a6-pc-builder-backend.vercel.app/)
+
+[Backendend Repository Link](https://github.com/mdxshakil/pc-builder-backend)
 
 ## Table of Contents
 
@@ -53,7 +57,9 @@ Create a .env file at the root of the project and add the necessary credentials:
 
 `NEXTAUTH_URL`
 
-Make sure to replace your_github_id, your_github_secret, your_nextauth_secret, and your_nextauth_url with the actual values you obtained during the application setup.
+`SERVER_BASE_URL`
+
+Make sure to replace your_github_id, your_github_secret, your_nextauth_secret, and your_nextauth_url with the actual values you obtained during the application setup and use backend live link as SERVER_BASE_URL.
 
 ### Running the Project
 
