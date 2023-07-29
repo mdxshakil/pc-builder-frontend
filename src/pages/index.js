@@ -4,6 +4,7 @@ import Productcard from "@/components/ui/Productcard"
 import Spinner from "@/components/ui/Spinner"
 import dynamic from "next/dynamic"
 import Head from "next/head"
+import Link from "next/link"
 import { Fade } from "react-awesome-reveal"
 
 export default function HomePage({ featuredProducts }) {
@@ -33,6 +34,11 @@ export default function HomePage({ featuredProducts }) {
               />)
             }
           </div>
+        </div>
+        <div className="flex justify-center pb-6">
+          <button className="badge badge-outline p-4 hover:badge-ghost">
+            <Link href={"/product"}>Browse all products</Link>
+          </button>
         </div>
       </Fade>
     </div>
