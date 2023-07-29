@@ -9,7 +9,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: "/login"
+    signIn: "https://a6-pc-builder-frontend.vercel.app/login"
   }
 }
 
