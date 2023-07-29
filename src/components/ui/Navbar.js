@@ -8,7 +8,7 @@ const Navbar = () => {
     const { user } = session || {};
 
     return (
-        <div className="navbar bg-neutral">
+        <div className="navbar bg-neutral sticky top-0 z-50">
             <div className="navbar-start">
                 {/* mobile - category dropdown */}
                 <div className="dropdown">

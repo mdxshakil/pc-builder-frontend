@@ -99,9 +99,9 @@ export const categoryButtonsData = [
         style: {
             background: 'linear-gradient(135deg, #f43f5e, #fb923c)',
             focusRingColor: 'pink',
-            icon: <MdOutlineStorage />,
         },
         path: "Storage Device",
+        icon: <MdOutlineStorage />,
 
     },
     {
