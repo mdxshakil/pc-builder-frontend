@@ -4,13 +4,20 @@ import { FaComputer } from "react-icons/fa6";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer place-items-center p-10 bg-base-200 text-base-content">
+            <footer className="footer place-items-center p-10 bg-base-200 text-base-content grid-cols-2 md:grid-cols-3">
                 <div>
-                    <span className="footer-title">Servicing</span>
+                    <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>
                     <a className="link link-hover">Customizing</a>
                     <a className="link link-hover">Repairing</a>
                     <a className="link link-hover">Wholesale</a>
+                </div>
+                <div>
+                    <span className="footer-title">Legal & Privacy</span>
+                    <a className="link link-hover">Terms & Conditions</a>
+                    <a className="link link-hover">Privacy Policy</a>
+                    <a className="link link-hover">Cookie Policy</a>
+                    <a className="link link-hover">Business Policy</a>
                 </div>
                 <div>
                     <span className="footer-title">Company</span>
@@ -18,12 +25,6 @@ const Footer = () => {
                     <a className="link link-hover">Contact us</a>
                     <a className="link link-hover">Partner</a>
                     <a className="link link-hover">Press kit</a>
-                </div>
-                <div>
-                    <span className="footer-title">Legal</span>
-                    <a className="link link-hover">Terms & Conditions</a>
-                    <a className="link link-hover">Privacy policy</a>
-                    <a className="link link-hover">Cookie policy</a>
                 </div>
             </footer>
             <footer className="footer px-10 py-4 border-t bg-neutral text-base-content border-base-300">

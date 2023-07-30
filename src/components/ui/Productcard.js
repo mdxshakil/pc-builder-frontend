@@ -3,7 +3,7 @@ import Link from 'next/link';
 import RatingStars from './RatingStars';
 
 const Productcard = ({ product }) => {
-    const { _id, image, productName, category, price, status, averageRating } = product || {};
+    const { _id, image, productName, category, price, status, ratings } = product || {};
     return (
 
         <div className="w-full max-w-sm border rounded-lg shadow bg-gray-800 border-gray-700 hover:scale-105 transition-all">
@@ -20,7 +20,7 @@ const Productcard = ({ product }) => {
                 </div>
                 <div className="mt-2.5 mb-5 text-yellow-500">
                     <span className='flex gap-1'>
-                    <RatingStars rating={averageRating} />{`(${averageRating})`}
+                    <RatingStars rating={ratings} />{`(${ratings})`}
                     </span>
                 </div>
 

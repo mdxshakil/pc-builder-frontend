@@ -7,7 +7,7 @@ import Link from 'next/link';
 import { Fade } from 'react-awesome-reveal';
 
 const BuilderItemsPage = ({ products }) => {
-    const { data: session, status } = useSession()
+    const { status } = useSession()
 
     if (status === "loading") {
         return <Spinner />

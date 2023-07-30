@@ -12,7 +12,7 @@ import { FiSend } from 'react-icons/fi';
 const ProductDetailsPage = ({ productDetails }) => {
     const { register, handleSubmit, reset } = useForm();
     const {data:session} = useSession();
-    const { _id, image, productName, category, status, price, description, keyFeatures, individualRating, averageRating, reviews } = productDetails || {};
+    const { _id, image, productName, category, status, price, description, keyFeatures, individualRating, ratings, reviews } = productDetails || {};
 
 
     //handle comment submission
@@ -81,8 +81,8 @@ const ProductDetailsPage = ({ productDetails }) => {
                             <div>
                                 <span>{`Ratings: (avg | user)`}</span>
                                 <div className='flex items-center justify-start gap-2 sm:gap-4'>
-                                    <span className='flex gap-1 text-yellow-500'>                                      <RatingStars rating={averageRating} />
-                                        {`(${averageRating})`}
+                                    <span className='flex gap-1 text-yellow-500'>                                      <RatingStars rating={ratings} />
+                                        {`(${ratings})`}
                                     </span>
                                     |
                                     <span className='flex gap-1 text-green-500'>

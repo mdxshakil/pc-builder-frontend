@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import RatingStars from './RatingStars';
 
 const BuilderItemCard = ({ product }) => {
-    const { image, productName, category, price, status, averageRating } = product || {};
+    const { image, productName, category, price, status, ratings } = product || {};
     const dispatch = useDispatch();
     const router = useRouter();
 
@@ -25,7 +25,7 @@ const BuilderItemCard = ({ product }) => {
                         : <span className="text-xs md:text-sm badge badge-xs badge-error">{status}</span>}
                 </div>
                 <span className='mt-2 text-yellow-500 text-xs sm:text-md md:text-lg'>
-                    <RatingStars rating={averageRating} />
+                    <RatingStars rating={ratings} />
                 </span>
                 <div className="flex mt-4 items-center justify-around gap-2 md:gap-6">
                     <h2 className='text-md md:text-xl font-bold'>${price}</h2>
