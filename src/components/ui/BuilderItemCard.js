@@ -3,11 +3,14 @@ import Image from 'next/image';
 import { useRouter } from 'next/router';
 import { useDispatch } from 'react-redux';
 import RatingStars from './RatingStars';
+import { calculateAverageRating } from '@/utils';
 
 const BuilderItemCard = ({ product }) => {
     const { image, productName, category, price, status, ratings } = product || {};
     const dispatch = useDispatch();
     const router = useRouter();
+
+    const avgRating = calculateAverageRating(ratings);
 
     const handleAddToBuilder = () => {
         dispatch(addToBuilder(product));
@@ -25,7 +28,7 @@ const BuilderItemCard = ({ product }) => {
                         : <span className="text-xs md:text-sm badge badge-xs badge-error">{status}</span>}
                 </div>
                 <span className='mt-2 text-yellow-500 text-xs sm:text-md md:text-lg'>
-                    <RatingStars rating={ratings} />
+                    <RatingStars rating={avgRating} />
                 </span>
                 <div className="flex mt-4 items-center justify-around gap-2 md:gap-6">
                     <h2 className='text-md md:text-xl font-bold'>${price}</h2>

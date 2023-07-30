@@ -1,7 +1,7 @@
 import RootLayout from '@/components/layout/RootLayout';
 import ChatBubble from '@/components/ui/ChatBubble';
 import RatingStars from '@/components/ui/RatingStars';
-import { capitalizeFirstLetter } from '@/utils';
+import { calculateAverageRating, capitalizeFirstLetter } from '@/utils';
 import { useSession } from 'next-auth/react';
 import Head from 'next/head';
 import Image from 'next/image';
@@ -11,9 +11,13 @@ import { FiSend } from 'react-icons/fi';
 
 const ProductDetailsPage = ({ productDetails }) => {
     const { register, handleSubmit, reset } = useForm();
-    const {data:session} = useSession();
-    const { _id, image, productName, category, status, price, description, keyFeatures, individualRating, ratings, reviews } = productDetails || {};
+    const { data: session } = useSession();
+    const { _id, image, productName, category, status, price, description, keyFeatures, individualRatings, ratings, reviews } = productDetails || {};
 
+    const avgRating = calculateAverageRating(ratings);
+
+    //find user rating for specific product
+    const userRating = individualRatings?.find((userRating) => userRating?.user === session?.user?.email && userRating?.productId === _id)
 
     //handle comment submission
     const onSubmit = async (comment) => {
@@ -31,7 +35,7 @@ const ProductDetailsPage = ({ productDetails }) => {
                 reset();
                 toast.success("Review added", {
                     duration: 3000,
-                    position:"top-center",
+                    position: "top-center",
                     style: {
                         backgroundColor: "#171E2C",
                         color: "#fff"
@@ -40,7 +44,7 @@ const ProductDetailsPage = ({ productDetails }) => {
             } else {
                 toast.error("Failed to add review!", {
                     duration: 3000,
-                    position:"top-center",
+                    position: "top-center",
                     style: {
                         backgroundColor: "#171E2C",
                         color: "#fff"
@@ -78,17 +82,24 @@ const ProductDetailsPage = ({ productDetails }) => {
                                     <span className='badge badge-success text-xs sm:text-md'>{status}</span> :
                                     <span className='badge badge-error text-xs sm:text-md'>{status}</span>}
                             </div>
+                            {/* average rating display */}
                             <div>
-                                <span>{`Ratings: (avg | user)`}</span>
+                                <span>
+                                    Ratings: (avg{session?.user?.email && userRating ? " | your" : ""})
+                                </span>
                                 <div className='flex items-center justify-start gap-2 sm:gap-4'>
-                                    <span className='flex gap-1 text-yellow-500'>                                      <RatingStars rating={ratings} />
-                                        {`(${ratings})`}
+                                    <span className='flex gap-1 text-yellow-500'>                                      <RatingStars rating={avgRating} />
+                                        {`(${avgRating})`}
                                     </span>
-                                    |
-                                    <span className='flex gap-1 text-green-500'>
-                                        <RatingStars rating={individualRating} />
-                                        {`(${individualRating})`}
-                                    </span>
+                                    
+                                    {/* individual rating display */}
+                                    {session?.user?.email && userRating && <>
+                                        <span>|</span>
+                                        <span className='flex gap-1 text-green-500'>
+                                            <RatingStars rating={userRating?.rating} />
+                                            {`(${userRating?.rating})`}
+                                        </span>
+                                    </>}
                                 </div>
                             </div>
                             {/* Display keyFeatures */}
@@ -120,8 +131,8 @@ const ProductDetailsPage = ({ productDetails }) => {
                                 placeholder="Leave your review..."
                                 {...register("comment")}
                                 maxLength={100}
-                                required 
-                                disabled={!session?.user?.email}/>
+                                required
+                                disabled={!session?.user?.email} />
                             <button
                                 type="submit"
                                 disabled={!session?.user?.email}

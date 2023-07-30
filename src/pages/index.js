@@ -2,15 +2,19 @@ import RootLayout from "@/components/layout/RootLayout"
 import CategoryButtons from "@/components/ui/CategoryButton"
 import Productcard from "@/components/ui/Productcard"
 import Spinner from "@/components/ui/Spinner"
+import { calculateAverageRating } from "@/utils"
+import { useSession } from "next-auth/react"
 import dynamic from "next/dynamic"
 import Head from "next/head"
 import Link from "next/link"
 import { Fade } from "react-awesome-reveal"
 
 export default function HomePage({ featuredProducts }) {
+  const { data: session } = useSession();
   const DynamicBanner = dynamic(() => import('@/components/ui/Banner'), {
     loading: () => <Spinner />
   })
+
   return (
     <div className="max-w-7xl mx-auto">
       <Head>
@@ -31,6 +35,7 @@ export default function HomePage({ featuredProducts }) {
               featuredProducts?.map(product => <Productcard
                 key={product?._id}
                 product={product}
+                user={session?.user?.email}
               />)
             }
           </div>
