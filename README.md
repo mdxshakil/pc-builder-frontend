@@ -2,6 +2,16 @@
 
 This project is a web application for selling PC components. Users can browse through a wide range of PC parts and purchase them. Additionally, registered and logged-in users gain access to a special feature called PC Builder. In the PC Builder, they can select various PC components to build their own custom PC configurations.
 
+## Features
+* User can signup using github account
+* User can submit their review on each product
+* User can submit rating on each product
+* User can browse through variety of products
+* User can build their own pc by selecting their favourite components and see the total price
+* Usage of SSG and SSR
+* Used redux toolkit for state management
+ 
+
 [Frontend Live Link](https://a6-pc-builder-frontend.vercel.app/)
 
 [Frontend Repository Link](https://github.com/mdxshakil/pc-builder-frontend)
