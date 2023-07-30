@@ -4,7 +4,7 @@ import { FaComputer } from "react-icons/fa6";
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10 bg-base-200 text-base-content">
+            <footer className="footer place-items-center p-10 bg-base-200 text-base-content">
                 <div>
                     <span className="footer-title">Servicing</span>
                     <a className="link link-hover">Branding</a>
